@@ -1,16 +1,20 @@
+import cityCards from "./CityCards";
+
 const Cities = () => {
   return (
-    <section id="cities" className="bg-primary flex flex-col justify-center items-center">
-      <div className="">
-        <h1>CITIES</h1>
-        <h4>Colection of the most beautifull cities and places</h4>
+    <section id="cities" className="bg-dark text-light flex flex-col justify-center items-center">
+
+      <cityCards />
+
+      {/* <div className="">
       </div>
+
       <div>
         <input type="search" name="" id="" />
         <div>
-          carrusel
         </div>
-      </div>
+      </div> */}
+
     </section>  
   )
 }

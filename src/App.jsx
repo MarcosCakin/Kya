@@ -1,6 +1,6 @@
 import Main from "../layouts/Main"
 import Home from "../src/components/Home"
-// import Cities from "./components/Cities"
+import Cities from "./components/Cities"
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
         <Main>
           <main>
             <Home />
-            {/* <Cities /> */}
+            <Cities />
           </main>
         </Main>
   

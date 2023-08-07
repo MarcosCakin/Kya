@@ -6,17 +6,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-header {
-    height: 12vh;
-    box-shadow: 0px 2px 15px rgba(213, 81, 4, 0.1);
+.navShadow {
+    position: sticky;
     z-index: 999;
+    top: -10px;
+    box-shadow: 0 -6px 10px 5px rgba(189, 87, 3, 0.1);
     width: 100%;
 }
 
 footer {
-    box-shadow: 0px 2px 15px rgba(213, 81, 4, 0.1);
+    box-shadow: 0px 2px 15px rgba(189, 87, 3, 0.1);;
 }
 
 .homeImg {
