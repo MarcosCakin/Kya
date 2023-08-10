@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import LogBtn from './LogBtn';
+import { Link } from 'react-router-dom';
+import links from '../arrays/links' 
+// import { Link as LinkRouter} from 'react-router-dom'; SOLAMENTE CUANDO LIBRERIAS COMPARTEN NOMBRES
 
 function Header() {
-
 
     const [open, setOpen] = useState(false);
 
@@ -25,11 +28,10 @@ return (
                     <div className='hidden md:block'>
 
                         <div className='ml-10 flex items-center md:space-x-8'>
-                            <a href="#home" className="text-light font-bold hover:text-primary">Home</a>
-                            <a href="#cities" className="text-light font-bold hover:text-primary">Cities</a>
-                            <a href="#login" className="border py-2 px-4 rounded bg-primary text-dark font-bold hover:bg-dark hover:text-primary"> 
-                                <FontAwesomeIcon icon={faUser} className='mr-2'/> Login                         
-                            </a>
+                            {
+                                links.map((link) => (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
+                            }
+                            <LogBtn />
                         </div>
 
                     </div>
@@ -46,13 +48,11 @@ return (
 
             {open ? (
                 <div className='py-4 md:hidden focus:hidden'>
-                    <div className='ox-2 pt-2 pb-3 space-y-1 sm:px-3 text-light'>
-                            <a href="#" className="block px-3 py-2">Home</a>
-                            <a href="#cities" className="block px-3 py-2">Cities</a>
-                            <a href="#login" className="block py-2 px-3 rounded border m-auto bg-primary w-1/2 text-center text-dark
-                            opacity-90 hover:bg-dark hover:border-primary hover:text-primary"> 
-                                <FontAwesomeIcon icon={faUser} className='mr-2'/> Login                         
-                            </a>
+                    <div className='flex flex-col mx-4 ox-2 pt-2 pb-3 space-y-2 sm:px-3 text-light'>
+                        {
+                            links.map((link) => (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
+                        }
+                        <LogBtn className="w-1/2"/>        
                     </div>
                 </div>
             ) : null }
