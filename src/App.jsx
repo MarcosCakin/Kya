@@ -1,20 +1,9 @@
-import Main from "../layouts/Main"
-import Home from "../src/components/Home"
-import Cities from "./components/Cities"
+import { RouterProvider } from "react-router-dom"
+import router from "./router/Router"
 
 function App() {
-
   return (
-    <>
-
-        <Main>
-          <main>
-            <Home />
-            <Cities />
-          </main>
-        </Main>
-  
-    </>
+  <RouterProvider router={router} />
   )
 }
 

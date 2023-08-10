@@ -17,7 +17,7 @@ return (
                 <div className='flex items-center justify-around pt-2'>
 
                     <div className='flex items-center'>
-                        <a href="#">
+                        <a>
                             <img src="./public/logo.png" alt="kya logo" className='rotate90'/>
                         </a>
                     </div>
