@@ -21,7 +21,7 @@ return (
 
                     <div className='flex items-center'>
                         <a>
-                            <img src="./public/logo.png" alt="kya logo" className='rotate90'/>
+                            <img src="/logo.png" className='rotate90'/>
                         </a>
                     </div>
 

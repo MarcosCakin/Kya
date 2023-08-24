@@ -3,7 +3,7 @@ import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = () => {
   return (
-    <div className="scroll-smooth flex flex-col items-center text-left space-y-8 py-4 bg-darkLight text-light md:flex-row md:justify-between md:px-16">
+    <div className="scroll-smooth flex flex-col items-center text-left space-y-8 bg-darkLight text-light md:flex-row md:justify-between md:px-16">
         <div className="space-y-8 flex flex-col items-center md:w-1/2">
           <h1 className="text-primary font-bold text-center text-4xl">
             MyTinerar<span className="text-light font-extrabold">y</span>

@@ -15,21 +15,21 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/Cities',
+                path: '/cities',
                 element: <Cities />
             },
             {
-                path: '/Login',
+                path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/cities/:id',
+                element: <CityDetail/>
             },
             // {
             //     path: '/Signin',
             //     element: <Login />
             // },
-            {
-                path: '/Detail',
-                element: <CityDetail/>
-            },
         ],
     },
 ])

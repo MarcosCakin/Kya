@@ -5,7 +5,7 @@ const Footer = () => {
 
         <div className="flex items-center font-bold border-b pb-2 border-light md:border-none md:pb-0">
           <a href="/home">
-            <img src="./public/logo.png" alt="kya logo"  className='h-10 mr-4'/>
+            <img src="/logo.png" className='h-10 mr-4'/>
           </a>
           <a href="#" className="hover:underline hover:text-primary">
             My Tinerary © 2023

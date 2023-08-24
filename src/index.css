@@ -30,6 +30,12 @@ section {
     box-shadow: 2px 2px 2px rgba(232, 229, 228, 0.1);
 }
 
+.cardShadow {
+    box-shadow: 0px 8px 15px -5px rgba(222,223,225,0.75);
+    -webkit-box-shadow: 0px 8px 15px -5px rgba(222,223,225,0.75);
+    -moz-box-shadow: 0px 8px 15px -5px rgba(222,223,225,0.75);   
+}
+
 .rotate90:hover {
 	animation: rotate90 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
