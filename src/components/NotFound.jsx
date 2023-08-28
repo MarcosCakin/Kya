@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div>
         <p className='text-2xl'>
-            We're sorry, we cant find a city 
+            We cant find any city, we're sorry
         </p>
         <FontAwesomeIcon className='h-10' icon={faFaceSadTear} />
     </div>

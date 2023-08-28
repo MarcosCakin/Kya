@@ -31,7 +31,7 @@ const CardDetail = () => {
           <h4 className='text-left px-4'>{cities.description}</h4>
         </div>
       </div>
-      <iframe className='w-[480px] h-[250px] p-2 md:w-11/12' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13642.934070279383!2d-61.501926!3d-31.255799550000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95caae3817e97aad%3A0x5374c27ff4fc9fb6!2sDellasanta%20Comercial%20Sa!5e0!3m2!1ses-419!2sar!4v1692890502974!5m2!1ses-419!2sar" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe className='w-[480px] h-[250px] p-2 md:w-11/12' src={cities.chart} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <UnderC />
     </section>
   )
