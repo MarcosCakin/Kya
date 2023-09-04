@@ -1,38 +1,30 @@
 import { Link } from "react-router-dom";
 import { Card } from "../components/Card";
-import { useEffect, useState, useRef } from "react";
-import axios from "axios";
+import { useEffect, useRef } from "react";
 import NotFound from "../components/NotFound";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { useDispatch, useSelector } from "react-redux";
+import { filter_cities, get_cities } from "../store/actions/cityActions";
 
 const Cities = () => {
 
-  const [cities, setCities] = useState([]);
+  const dispatch = useDispatch();
+  const cities = useSelector((store) => store.cityReducer.cities);
 
   useEffect(() => {
-    scroll(0,0)
-    axios.get('http://localhost:8000/api/cities')
-      .then(response => setCities(response.data.cities))
-      .catch(err => console.log(err))
+    dispatch(get_cities())
   }, []);
 
 
   let inputSearch = useRef();
 
-    const handleSearch = async () => {
-      const name = inputSearch.current.value
-      try {
-        const response = await axios.get(`http://localhost:8000/api/cities?city=${name}`)
-        setCities(response.data.cities)
-      } catch (error) {
-        if (error.response.status === 404) {
-          setCities([])
-        } else {
-          console.log(error)
-        }
-      }
-    };
+  const handleSearch = () => {
+      dispatch(filter_cities({
+        name: inputSearch.current.value
+      }))
+  }
+   
 
   return (
     <section id="cities" className="bg-darkLight text-light flex flex-col items-center text-center">

@@ -1,22 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Itinerary from './Itinerary';
 
 const CardDetail = () => {
 
-
-    let {id} = useParams(); 
-
-    const [cities, setCities] = useState('');
-    let index = 0;
-
+  let index = 0;
+  
+  let {id} = useParams(); 
+  
+  const [cities, setCities] = useState('');
     useEffect(()=>{
-      scroll(0, 0)
       axios.get(`http://localhost:8000/api/cities/${id}`)
        .then(response => setCities(response.data.city))
        .catch((err) => console.log(err))
     }, [] );
+
 
   return (
     <section className='bg-darkLight text-light flex flex-col items-center justify-center'>
@@ -30,8 +28,8 @@ const CardDetail = () => {
           <h4 className='text-center md:text-left px-4'>{cities.description}</h4>
         </div>
       </div>
-      <iframe className='w-[480px] h-[250px] p-2 md:w-11/12' src={cities.chart} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <Itinerary />
+      <iframe className='w-[480px] h-[250px] p-2 md:w-11/12' src={cities.chart} allowFullScreen="" loading="lazy" referrerolicy="no-referrer-when-downgrade"></iframe>
+      <h2 className='text-light text-3xl'>{cities.user}</h2>
     </section>
   )
 }
