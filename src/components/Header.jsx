@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import LogBtn from './LogBtn';
 import { Link } from 'react-router-dom';
 import links from '../arrays/links' 
-// import { Link as LinkRouter} from 'react-router-dom'; SOLAMENTE CUANDO LIBRERIAS COMPARTEN NOMBRES
+import { useSelector } from 'react-redux/es/hooks/useSelector'; 
 
 function Header() {
 
     const [open, setOpen] = useState(false);
+
+    const photo = useSelector(store => store.userReducer.photo)
 
     const handleMenu = () => {
         setOpen((prev) => !prev);
@@ -31,7 +32,9 @@ return (
                             {
                                 links.map((link) => (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
                             }
-                            <LogBtn />
+                            <a href="/signin">
+                                <img className='max-w-[50px] rounded-full' src={photo} alt="User photo" />
+                            </a>
                         </div>
 
                     </div>
@@ -48,11 +51,13 @@ return (
 
             {open ? (
                 <div className='py-4 md:hidden'>
-                    <div className='flex flex-col mx-4 ox-2 pt-2 pb-3 space-y-2 sm:px-3 text-light'>
+                    <div className='flex flex-col items-center mx-4 ox-2 pt-2 pb-3 space-y-2 sm:px-3 text-light'>
                         {
                             links.map((link) => (<Link onClick={() => {setOpen(false)}} className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
                         }
-                        <LogBtn className="w-1/2"/>        
+                        <a href="/signin">
+                            <img className='max-w-[50px] rounded-full' src={photo} alt="User photo" />
+                        </a>
                     </div>
                 </div>
             ) : null }

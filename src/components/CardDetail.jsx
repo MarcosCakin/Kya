@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import UnderC from './UnderC'
-
+import Itinerary from './Itinerary';
 
 const CardDetail = () => {
 
@@ -28,11 +27,11 @@ const CardDetail = () => {
         <div className='p-4 md:w-1/3 flex flex-col justify-center'>
           <h1 className='text-6xl text-primary font-extrabold text-center'>{cities.city}</h1>
           <p className='text-2xl text-light text-center pb-4'>{cities.country}</p> 
-          <h4 className='text-left px-4'>{cities.description}</h4>
+          <h4 className='text-center md:text-left px-4'>{cities.description}</h4>
         </div>
       </div>
       <iframe className='w-[480px] h-[250px] p-2 md:w-11/12' src={cities.chart} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <UnderC />
+      <Itinerary />
     </section>
   )
 }
