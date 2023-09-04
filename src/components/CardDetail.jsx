@@ -7,13 +7,13 @@ import { useParams } from 'react-router-dom'
 
 const CardDetail = () => {
 
-  let index = 0;
+  let index = 0; 
   
   let {id} = useParams(); 
   
   const [cities, setCities] = useState('');
     useEffect(()=>{
-      scroll(0,0)
+      // scroll(0,0)
       axios.get(`http://localhost:8000/api/cities/${id}`)
        .then(response => setCities(response.data.city))
        .catch((err) => console.log(err))
@@ -48,12 +48,12 @@ const CardDetail = () => {
             {cities.itinerary?.duration} hour/s
           </h2>
           <div className='flex flex-col items-center w-1/3 space-y-1'>
-            <img src={cities.user?.image} className='rounded-full w-[120px]' />
+            <img src={cities.user?.image} className='w-[100px] h-[100px] rounded-[100%] object-cover' />
             <h1>{cities.user?.name}</h1>
           </div>
           <div className='flex flex-col items-center w-1/3'>
             <button className='border rounded-xl px-2 hover:border-primary hover:text-primary'>
-            {cities.itinerary?.likes} <FontAwesomeIcon icon={faHeart} />
+              {cities.itinerary?.likes} <FontAwesomeIcon icon={faHeart} />
             </button>
             {cities.itinerary?.hashtags}
           </div>
@@ -72,28 +72,3 @@ const CardDetail = () => {
 }
 
 export default CardDetail
-
-{/* <div className='flex justify-around items-center bg-dark w-4/5 space-x-6 p-8 rounded-3xl'>
-
-<h2 className='flex flex-col items-center'>
-  <p>${cities.itinerary?.price}</p>
-  {cities.itinerary?.duration} hour/s
-</h2>
-
-<div className='flex flex-col items-center space-y-8'>
-    <h2 className='text-3xl text-primary uppercase font-bold'>{cities.itinerary?.name}</h2>
-    <img className='rounded-full max-w-[120px]' src={cities.user?.image} />
-    <h1>{cities.user?.name}</h1>
-    <button className='border p-2 rounded-full'>
-     see more... 
-  </button>
-</div>
-
-<div className='flex flex-col items-center'>
-  <button className='border rounded-xl px-2'>
-    {cities.itinerary?.likes} <FontAwesomeIcon icon={faHeart} className='text-primary'/>
-    </button>
-    {cities.itinerary?.hashtags}
-</div>
-
-</div> */}

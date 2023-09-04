@@ -13,32 +13,32 @@ const SignIn = () => {
   }
 
     return (
-      <div className="flex flex-col justify-center items-center text-light bg-darkLight h-[79.5vh]">
+      <div className="flex flex-col justify-center items-center text-light bg-darkLight min-h-[71vh]">
 
-        <div className="flex justify-center items-center p-4 border border-light space-x-2">
+        <div className="flex justify-center items-center p-4 m-4 rounded-xl bg-dark space-x-2">
 
           <div>
-            <img className="rounded-lg min-h-[350px]" src="https://images.cdn1.buscalibre.com/fit-in/360x360/1b/9d/1b9d4392109c310b46368596534d6f5b.jpg" />
+            <img className="border-r mr-6" src='public\travelTime.png' />
           </div>
 
           <div className="flex flex-col items-center space-y-6">
 
-            <h2 className="text-3xl font-bold text-primary underline">Login!</h2>
+            <h2 className="text-3xl font-bold text-primary underline">Sign in!</h2>
 
             <form className="flex flex-col space-y-6 text-md text-light" method="get">
 
               <div>
                 <label for="email"/>
-                <input className="px-3 py-1 w-full rounded-xl bg-dark" type="email" name="email" id="email" placeholder="E-mail..." required />
+                <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="email" name="email" id="email" placeholder="E-mail..." required />
               </div>
               
               <div>
               <label for="password" />
-              <input className="px-3 py-1 w-full rounded-xl bg-dark" type="password" name="password" id="password" placeholder="Password..." required />
+              <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="password" name="password" id="password" placeholder="Password..." required />
               </div>
               
-              <button type="submit" onClick={handleSingIn} className="bg-dark text-light rounded-xl p-1 font-bold hover:bg-primary hover:text-dark">
-                Login
+              <button type="submit" onClick={handleSingIn} className="bg-dark text-primary rounded-xl p-1 border border-primary  font-bold hover:bg-primary hover:text-dark">
+                Sing in
               </button>
               <p className="text-sm text-center">
                 Dont have an account? please, <a className="underline" href="/signup">sing up here!</a>

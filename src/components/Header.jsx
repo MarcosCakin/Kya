@@ -33,7 +33,7 @@ return (
                                 links.map((link) => (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
                             }
                             <a href="/signin">
-                                <img className='max-w-[50px] rounded-full' src={photo} alt="User photo" />
+                                <img  className='w-[50px] h-[50px] rounded-[100%] object-cover' src={photo} alt="User photo" />
                             </a>
                         </div>
 
