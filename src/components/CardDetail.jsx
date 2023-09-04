@@ -1,6 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+
 
 const CardDetail = () => {
 
@@ -30,38 +33,27 @@ const CardDetail = () => {
       </div>
       <iframe className='w-[480px] h-[250px] p-2 md:w-11/12' src={cities.chart} allowFullScreen="" loading="lazy" referrerolicy="no-referrer-when-downgrade"></iframe>
       
-      <div className='flex flex-col text-center bg-dark w-4/5 border space-y-6 p-8'>
+      <div className='flex justify-around items-center bg-dark w-4/5 border space-x-6 p-8'>
 
-
-        <h2 className='text-light text-3xl'>{cities.itinerary?.name}</h2>
-
-
-        <div className='flex flex-row justify-around items-center'>
-
-          <h2 className='flex flex-col items-center'>
-            <p>${cities.itinerary?.price}</p>
-            {cities.itinerary?.duration} hour/s
-          </h2>
-
-          <div className='flex flex-col items-center'>
+        <h2 className='flex flex-col items-center'>
+          <p>${cities.itinerary?.price}</p>
+          {cities.itinerary?.duration} hour/s
+        </h2>
+        
+        <div className='flex flex-col items-center space-y-8'>
+            <h2 className='text-3xl text-primary uppercase font-bold'>{cities.itinerary?.name}</h2>
             <img className='rounded-full max-w-[100px] max-h-[100px]' src={cities.user?.image} />
             <h1>{cities.user?.name}</h1>
-          </div>
-
-          <h2 className='flex flex-col items-center'>
-            <button className='border rounded-xl px-2'>
-            {cities.itinerary?.likes}
-            </button>
-            {cities.itinerary?.hashtags}
-            
-          </h2>
-        </div>
-
-
-        <div>
-          <button className='border p-2 rounded-full'>
+            <button className='border p-2 rounded-full'>
              see more... 
           </button>
+        </div>
+      
+        <div className='flex flex-col items-center'>
+          <button className='border rounded-xl px-2'>
+            {cities.itinerary?.likes} <FontAwesomeIcon icon={faHeart} className='text-primary'/>
+            </button>
+            {cities.itinerary?.hashtags}
         </div>
 
       </div>
