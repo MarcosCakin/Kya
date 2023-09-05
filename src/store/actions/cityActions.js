@@ -21,7 +21,7 @@ export const filter_cities = createAsyncThunk('filter_citites', async (obj) =>{
     } catch (error) {
 
         return {
-            cities: []
+            cities: [] 
         }
     }
 })

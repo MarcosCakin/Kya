@@ -1,5 +1,6 @@
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import { user_photo } from "../store/actions/userActions";
+import GoogleButton from "../components/GoogleButton";
 
 const SignIn = () => {
 
@@ -14,62 +15,35 @@ const SignIn = () => {
 
     return (
       <div className="flex flex-col justify-center items-center text-light bg-darkLight min-h-[71vh]">
-
         <div className="flex justify-center items-center p-4 m-4 rounded-xl bg-dark space-x-2">
-
           <div>
-            <img className="border-r mr-6" src='public\travelTime.png' />
+            <img className="mr-6" src='/travelTime.png' />
           </div>
-
           <div className="flex flex-col items-center space-y-6">
-
             <h2 className="text-3xl font-bold text-primary underline">Sign in!</h2>
-
             <form className="flex flex-col space-y-6 text-md text-light" method="get">
-
               <div>
                 <label for="email"/>
                 <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="email" name="email" id="email" placeholder="E-mail..." required />
               </div>
-              
               <div>
               <label for="password" />
               <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="password" name="password" id="password" placeholder="Password..." required />
               </div>
-              
-              <button type="submit" onClick={handleSingIn} className="bg-dark text-primary rounded-xl p-1 border border-primary  font-bold hover:bg-primary hover:text-dark">
+              <div className="flex flex-col space-y-4">
+                <button type="submit" onClick={handleSingIn} className="bg-dark text-primary rounded-xl p-1 border border-primary  font-bold hover:bg-primary hover:text-dark">
                 Sing in
-              </button>
-              <p className="text-sm text-center">
-                Dont have an account? please, <a className="underline" href="/signup">sing up here!</a>
+                </button>
+                <p className="text-sm text-center">
+                  Dont have an account? please, <a className="underline" href="/signup">sing up here!</a>
+                <p className="pb-2">or</p>
+                <GoogleButton />
               </p>
-
+              </div>
             </form>
           </div>
-
         </div>
       </div>  
     )
   }
-  
-  export default SignIn;
-
-
-  /*
-  EL LOGIN TIENE Q TENER:
-  -TITULO 
-    -EMAIL
-    -PASSOWRD
-    -BOTON DE LOGIN
-
-
-  EL REGISTER TIENE Q TENER:
-  -TITULO
-    -NOMBRE
-    -APELLIDO
-    -EMAIL
-    -PASSWORD
-    -AVATAR
-    -COUNTRY
-    -BOTON DE REGISTRER
-  */
+export default SignIn;

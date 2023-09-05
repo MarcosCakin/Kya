@@ -1,8 +1,6 @@
 import Hero from '../components/Hero';
 import Carousel from '../components/carousel';
 function Home() {
-
-
   return (
     <section id="home" className="space-y-4 bg-darkLight">
       <Hero />

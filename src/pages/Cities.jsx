@@ -13,6 +13,7 @@ const Cities = () => {
   const cities = useSelector((store) => store.cityReducer.cities);
 
   useEffect(() => {
+    scroll(0,0)
     dispatch(get_cities())
   }, []);
 
