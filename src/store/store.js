@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./reducers/userReducers";
-import cityReducer from "./reducers/cityReducers";
-
+import userReducer from "./reducers/userReducers.js";
+import cityReducer from "./reducers/cityReducers.js";
 
 export const store = configureStore({
     reducer: {
