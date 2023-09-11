@@ -14,19 +14,14 @@ import { get_city_by_id } from '../store/actions/cityActions';
 const Itineraries = () => {
     
     let {id} = useParams();
-  
     const cities = useSelector((store) => store.cityReducer.city)
-  
     const dispatch = useDispatch()
-  
       useEffect(()=>{
-          // scroll(0,0)
+          scroll(0,0)
           dispatch(get_city_by_id(id)) 
       },[])
 
-
       const [isVisible, setIsVisible] = useState(false);
-
       const toggleVisibility = () => {
         setIsVisible(!isVisible);
       };
@@ -51,13 +46,12 @@ const Itineraries = () => {
         <div className="flex flex-col items-center w-1/3">
           <button className="border rounded-xl px-2 hover:border-primary hover:text-primary">
             {cities?.itinerary?.likes} <FontAwesomeIcon icon={faHeart} />
+            {/* ¡¡ hacer un component de likes !! */}
           </button>
           {cities?.itinerary?.hashtags}
         </div>
       </div>
-
         <Activities visible={isVisible} />
-
       <button onClick={toggleVisibility} className="border p-2 rounded-full px-8 self-center hover:border-primary hover:text-primary">
         {isVisible ? 'Read less' : 'Read more'}
       </button>

@@ -30,10 +30,12 @@ return (
 
                         <div className='ml-10 flex items-center md:space-x-8'>
                             {
-                                links.map((link) => (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
+                                links.map((link) => 
+                                    (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
                             }
-                            <a href="/signin">
-                                <img  className='w-[50px] h-[50px] rounded-[100%] object-cover' src={photo} alt="User photo" />
+                            <a href="/signin" className='text-light flex items-center space-x-2 p-1 my-2 hover:text-primary'>
+                                <img className='w-[50px] h-[50px] rounded-[100%] object-cover' src={photo} alt="User photo" />
+                                <p className='font-bold'> Login </p>
                             </a>
                         </div>
 
