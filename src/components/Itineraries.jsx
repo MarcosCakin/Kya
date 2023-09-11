@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import Itinerary$ from './Itinerary$';
+import Activities from './Activities';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useDispatch, useSelector, } from 'react-redux';
@@ -18,9 +20,16 @@ const Itineraries = () => {
     const dispatch = useDispatch()
   
       useEffect(()=>{
-          scroll(0,0)
+          // scroll(0,0)
           dispatch(get_city_by_id(id)) 
       },[])
+
+
+      const [isVisible, setIsVisible] = useState(false);
+
+      const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+      };
 
   return (
     <div className="flex flex-col bg-dark w-4/5 p-8 rounded-3xl space-y-6">
@@ -28,8 +37,8 @@ const Itineraries = () => {
         {cities?.itinerary?.name}
       </h2>
       <div className="flex items-center justify-around space-x-6">
-        <h2 className="text-center w-1/3">
-          <p>${cities?.itinerary?.price}</p>
+        <h2 className="flex flex-col text-center w-1/3">
+          <Itinerary$ price={cities?.itinerary?.price} />
           {cities?.itinerary?.duration} hour/s
         </h2>
         <div className="flex flex-col items-center w-1/3 space-y-1">
@@ -46,8 +55,11 @@ const Itineraries = () => {
           {cities?.itinerary?.hashtags}
         </div>
       </div>
-      <button className="border p-2 rounded-full px-8 self-center hover:border-primary hover:text-primary">
-        see more...
+
+        <Activities visible={isVisible} />
+
+      <button onClick={toggleVisibility} className="border p-2 rounded-full px-8 self-center hover:border-primary hover:text-primary">
+        {isVisible ? 'Read less' : 'Read more'}
       </button>
     </div>
   );
