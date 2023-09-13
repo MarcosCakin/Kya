@@ -29,3 +29,25 @@ export const user_token = createAction('user_token', (user) => {
         }
     }
 })
+
+
+// export const user_signup = createAsyncThunk(
+//     'user_signup',
+//     async (obj) => {
+//         try {
+//             const { data } = await axios.post('http://localhost:8000/api/auth/signup', obj.data)
+
+//             } 
+//         } catch (error) {
+
+//         }
+//     }
+// )
+
+
+
+// export const user_logout = createAsyncThunk(
+//     const X = await axios.post('http://localhost:8000/api/auth/signout', X)
+
+
+// )

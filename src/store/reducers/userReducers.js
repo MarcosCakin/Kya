@@ -1,5 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { user_login, user_token } from "../actions/userActions";
+// import { user_logout } from "../actions/userActions";
 
 const initialState = {
     user: null,
@@ -22,6 +23,20 @@ const userReducer = createReducer(
                 user: action.payload.user,
             }
         })
+        // .addCase(user_signup.fulfilled, (state,action) => {
+        //     return {
+        //         ...state,
+        //         user: action.payload.user,
+        //         token: action.payload.token
+
+        
+        //     }
+        // })
+        // .addCase(user_logout, (state, action) => {
+        //     return {
+
+        //     }
+        // })
 
 )
 
