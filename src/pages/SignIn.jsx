@@ -8,7 +8,6 @@ const SignIn = () => {
   const dispatch = useDispatch();
 
   const store = useSelector(store => store.userReducer)
-  console.log('Viene del store', store)
 
   const [formData, setFormData] = useState({
     email:'',

@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import Cities from "../pages/Cities";
 import CityDetail from "../pages/CityDetail";
 import SignIn from "../pages/SignIn";
-import SingUp from "../components/SignUp"
+import SignUp from "../components/SignUp"
 import ProtectedRoute from "./ProtectedRoute";
 import NotFound from "../components/NotFound";
 
@@ -23,18 +23,18 @@ const router = createBrowserRouter([
 
             },
             {
+                path: '/cities/:id',
+                element: <CityDetail/>
+            },
+            {
                 path: '/signin',
                 element: (<ProtectedRoute path='/'>
                             <SignIn />
                         </ProtectedRoute>)
             },
             {
-                path: '/cities/:id',
-                element: <CityDetail/>
-            },
-            {
                 path: '/signup',
-                element: <SingUp />
+                element: <SignUp />
             },
             {
                 path: '/404',
