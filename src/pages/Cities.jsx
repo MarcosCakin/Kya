@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card } from "../components/Card";
 import { useEffect, useRef } from "react";
-import NotFound from "../components/NotFound";
+import CityNotFound from "../components/CityNotFound";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from "react-redux";
@@ -50,7 +50,7 @@ const Cities = () => {
                             <Card city={city.city} description={city.description} country={city.country} image={city.image}/>
                         </Link>
                     )
-                }) : <NotFound />
+                }) : <CityNotFound />
               }
       </div>
     </section>  

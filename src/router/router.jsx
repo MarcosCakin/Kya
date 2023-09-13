@@ -6,6 +6,7 @@ import CityDetail from "../pages/CityDetail";
 import SignIn from "../pages/SignIn";
 import SingUp from "../components/SignUp"
 import ProtectedRoute from "./ProtectedRoute";
+import NotFound from "../components/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/404',
-                element: <h1 className="text-3xl">Error 404 NOT FOUND!</h1>
+                element: <NotFound />
             }
         ],
     },
