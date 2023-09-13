@@ -25,7 +25,7 @@ const CardDetail = () => {
             <img src={cities?.image} alt="picture of the city" className='h-4/5 min-w-full rounded-2xl shadow-2xl'/>
         </div>
         <div className='p-4 md:w-1/3 flex flex-col justify-center'>
-          <h1 className='text-6xl text-primary font-extrabold text-center'>{cities?.city}</h1>
+          <h1 className='text-5xl text-primary font-bold text-center'>{cities?.city}</h1>
           <p className='text-2xl text-light text-center pb-4'>{cities?.country}</p> 
           <h4 className='text-center md:text-left px-4'>{cities?.description}</h4>
         </div>

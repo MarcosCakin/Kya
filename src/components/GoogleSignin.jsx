@@ -2,17 +2,13 @@ import axios from "axios";
 import { useEffect, useRef } from "react"
 
 const GoogleSignin = () => {
-
   const googleButton = useRef();  
-
   const handleCredentialResponse = async (response)=>{
     const data = {
       token_id: response.credential
     }
-
     const userResponse = await axios.post('http://localhost:8000/api/auth/google', data);
     console.log(userResponse)
-
   }
   
   useEffect(()=>{
@@ -29,15 +25,7 @@ const GoogleSignin = () => {
 }, [])
 
   return (
-    <div ref={googleButton}></div> 
+    <div className="self-center" ref={googleButton}></div> 
   )
 }
 export default GoogleSignin
-
-  // <button type="submit" className="flex items-center justify-center space-x-2 bg-dark text-primary rounded-xl
-  //  p-2 w-full  border border-primary font-bold hover:bg-primary hover:text-dark">
-  //     <img src="/googleI.png" className="w-[22px]" />
-  //     <p> Sing up with google! </p>
-  // </button>
-
-  

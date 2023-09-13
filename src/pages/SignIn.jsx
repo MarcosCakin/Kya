@@ -53,13 +53,13 @@ const SignIn = () => {
               </div>
               <div className="flex flex-col space-y-4">
                 <button type="submit" onClick={handleSingIn} className="bg-dark text-primary rounded-xl p-1 border border-primary  font-bold hover:bg-primary hover:text-dark">
-                Sing in
+                  Sing in
                 </button>
-              <p className="text-sm text-center">
-                  Dont have an account? please, <a className="underline" href="/signup">sing up here!</a><br />
-                <span className="pb-2">or</span>
+                <p className="text-sm text-center">
+                  Dont have an account? please, <a className="underline" href="/signup">sing up here!</a>
+                  <br/>or                
+                </p>
                 <GoogleSignin />
-              </p>
               </div>
             </form>
           </div>

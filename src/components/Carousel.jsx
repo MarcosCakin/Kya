@@ -34,7 +34,7 @@ clearInterval(timer)
 
         <button onClick={prev}><FontAwesomeIcon className='h-8 text-light hover:text-primary' icon={faAnglesLeft} /></button>
 
-        <div className=' h-[70vh] w-5/6 grid mb-3 mt-2 grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 md:gap-4'>
+        <div className='h-[70vh] w-5/6 grid mb-3 mt-2 grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 md:gap-4'>
             {[0, 1, 2, 3].map((i) => (
                 <a key={i} className='block relative rounded-xl border-dark border-2 text-dark font-extrabold hover:text-light hover:duration-200'>
                     <img
