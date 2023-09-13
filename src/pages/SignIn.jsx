@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { user_login } from "../store/actions/userActions";
-import GoogleButton from "../components/GoogleButton";
+import GoogleSignin from "../components/GoogleSignin";
 import { useState } from "react";
 
 const SignIn = () => {
@@ -58,7 +58,7 @@ const SignIn = () => {
               <p className="text-sm text-center">
                   Dont have an account? please, <a className="underline" href="/signup">sing up here!</a><br />
                 <span className="pb-2">or</span>
-                <GoogleButton />
+                <GoogleSignin />
               </p>
               </div>
             </form>

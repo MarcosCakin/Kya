@@ -24,7 +24,7 @@ function Header() {
 
 return (
         <header className='bg-dark navShadow'>
-            <div className='mx-auto px-4 sm:px-5 lg:px-8'>
+            <div className='mx-auto py-1 px-4 sm:px-5 lg:px-8'>
                 <div className='flex items-center justify-around pt-2'>
 
                     <div className='flex items-center'>
@@ -40,7 +40,7 @@ return (
                                 links.map((link) => 
                                     (<Link className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
                             }
-                            <img className='w-[50px] h-[50px] rounded-[100%] object-cover border border-light'
+                            <img className='w-[60px] h-[55px] rounded-[100%] object-cover border border-light'
                               src={user ? user.photo : defaultPhoto} alt="User photo" />
                         </div>
 
@@ -62,7 +62,7 @@ return (
                         {
                             links.map((link) => (<Link onClick={() => {setOpen(false)}} className='text-light font-bold hover:text-primary' key={link.title} to={link.to}>{link.title}</Link>))
                         }
-                        <img className='max-w-[50px] rounded-full' src={user ? user.photo : defaultPhoto} alt="User photo" />
+                        <img className='w-[60px] h-[60px] rounded-[100%] object-cover border border-light' src={user ? user.photo : defaultPhoto} alt="User photo" />
                     </div>
                 </div>
             ) : null }
