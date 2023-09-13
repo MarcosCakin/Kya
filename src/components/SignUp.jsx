@@ -14,19 +14,19 @@ const SingUp = () => {
             <h2 className="text-3xl font-bold text-primary underline">Sign up!</h2>
             <form className="flex flex-col space-y-6 text-md text-light"  role="form" method="get">
             <div>
-              <label for="name" />
+              <label htmlFor="name" />
               <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="text" name="name" id="name" placeholder="First name..." required />
             </div>
             <div>
-              <label for="lastName" />
+              <label htmlFor="lastName" />
               <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="text" name="lastName" id="lastName" placeholder="Last name..." required />
             </div>
             <div>
-                <label for="email"/>
+                <label htmlFor="email"/>
                 <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="email" name="email" id="email" placeholder="E-mail..." required />
             </div>
             <div>
-              <label for="password" />
+              <label htmlFor="password" />
               <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" type="password" name="password" id="password" placeholder="Password..." required />
             </div>
 
@@ -40,7 +40,7 @@ const SingUp = () => {
             </div>
 
             <div>
-                <label for="country" />
+                <label htmlFor="country" />
                 <select className="px-3 py-1 w-full rounded-xl bg-dark border-b cursor-pointer" type="select" name="country" id="country" required >
                   {
                     countries.map((country) => (<option value={country.value}>{country.name}</option>))
