@@ -30,6 +30,16 @@ export const user_token = createAction('user_token', (user) => {
     }
 })
 
+export const user_logout = createAction(
+    'user_logout',
+    (token) => {
+        localStorage.removeItem('token');
+        return {
+            payload: {
+                token
+            }
+        }
+    })
 
 // export const user_signup = createAsyncThunk(
 //     'user_signup',
@@ -42,12 +52,4 @@ export const user_token = createAction('user_token', (user) => {
 
 //         }
 //     }
-// )
-
-
-
-// export const user_logout = createAsyncThunk(
-//     const X = await axios.post('http://localhost:8000/api/auth/signout', X)
-
-
 // )
