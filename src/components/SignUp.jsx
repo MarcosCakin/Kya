@@ -2,15 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-solid-svg-icons'
 import countries from '../arrays/countries'
 
-// import { useDispatch, useSelector } from "react-redux";
-// import { user_signup } from "../store/actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+import { user_signup } from "../store/actions/userActions";
 import { useState } from 'react'
 
 const SingUp = () => {
 
-  // const dispatch = useDispatch();
-
-  // const store = useSelector(store => store.userReducer)
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -27,16 +25,17 @@ const SingUp = () => {
     })
   }
 
-  // const handleSingup = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     dispatch(user_signup({
-  //       data: formData
-  //     }))
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  const handleSingup = async (e) => {
+    e.preventDefault();
+    try {
+      dispatch(user_signup({
+        data: formData
+      }))
+      console.log(formData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
     return (
       <div className="flex flex-col justify-center items-center text-light bg-darkLight min-h-[71vh]">
@@ -47,7 +46,7 @@ const SingUp = () => {
           <div className="flex flex-col items-center space-y-6">
             <h2 className="text-3xl font-bold text-primary underline">Sign up!</h2>
             <form
-            //  onSubmit={handleSingup} 
+             onSubmit={handleSingup} 
              className="flex flex-col space-y-6 text-md text-light"  role="form" method="get">
             <div>
               <label htmlFor="name" />
@@ -63,24 +62,25 @@ const SingUp = () => {
             </div>
 
             <div>
+                <label htmlFor="country" />
+                <select className="px-3 py-1 w-full rounded-xl bg-dark border-b cursor-pointer" onChange={handleInput} type="select" name="country" id="country" required >
+                  {
+                    countries.map((country) => (<option key={country.name} value={country.value}>{country.name}</option>))
+                  }
+                </select>
+            </div>
+
+            <div>
               <label className="flex items-center justify-center text-light w-full text-center rounded-xl bg-dark border
                p-1 space-x-2 cursor-pointer hover:text-dark hover:bg-[#9ca3af] hover:border-dark">
                 <FontAwesomeIcon icon={faImage} />
                 <p> Choose avatar</p>
-                <input className="hidden" onChange={handleInput} type="file" name="avatar"accept=".jpg, .jpeg, .png" />
+                <input className="hidden" onChange={handleInput} type="file" name="avatar" />
               </label>
             </div>
 
-            <div>
-                <label htmlFor="country" />
-                <select className="px-3 py-1 w-full rounded-xl bg-dark border-b cursor-pointer" onChange={handleInput} type="select" name="country" id="country" required >
-                  {
-                    countries.map((country) => (<option key={country.value} value={country.value}>{country.name}</option>))
-                  }
-                </select>
-            </div>
             <button
-              //  onSubmit={handleSingup} 
+               onSubmit={handleSingup} 
               className="bg-dark text-primary rounded-xl p-1 font-bold border border-primary hover:bg-primary hover:text-dark">
                 Sign up!
             </button>
