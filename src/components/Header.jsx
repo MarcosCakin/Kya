@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from "react-redux";
 import { user_logout } from "../store/actions/userActions";
+import Swal from 'sweetalert2';
 
 function Header() {
 
@@ -18,10 +19,18 @@ function Header() {
     const defaultPhoto = useSelector(store => store.userReducer.defaultPhoto)
     const token = useSelector(store => store.userReducer.token);
     const user = useSelector(store => store.userReducer.user);
-
-    const handleSignout = (e) => {
+  
+    const handleSignout = async (e) => {
         e.preventDefault();
-          dispatch(user_logout({token}))
+        const result = await Swal.fire({
+            title: '¿Are you sure?',
+            showDenyButton: true,
+            confirmButtonText: 'Yes',
+        })
+        if(result.isConfirmed) {
+            Swal.fire('User sign-out!', '', 'succes')
+            dispatch(user_logout({token}))
+        }
       }
 
     const links = [

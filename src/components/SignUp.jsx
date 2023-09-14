@@ -5,6 +5,7 @@ import countries from '../arrays/countries'
 import { useDispatch, useSelector } from "react-redux";
 import { user_signup } from "../store/actions/userActions";
 import { useState } from 'react'
+import Swal from 'sweetalert2';
 
 const SingUp = () => {
 
@@ -27,6 +28,12 @@ const SingUp = () => {
 
   const handleSingup = async (e) => {
     e.preventDefault();
+    const result = await Swal.fire({
+        title: 'Welcome',
+        text: "usuario logueado correctamente",
+        icon: 'success',
+        confirmButtonText: 'Okay'
+    })
     try {
       dispatch(user_signup({
         data: formData

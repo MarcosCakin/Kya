@@ -14,6 +14,12 @@ const GoogleSignin = () => {
     const data = {
       token_id: response.credential
     }
+    const result = await Swal.fire({
+      title: 'Welcome',
+      text: "logueado con google!",
+      icon: 'success',
+      confirmButtonText: 'Okay'
+  })
     try {
       dispatch(google_user_signin({
         data
@@ -22,7 +28,6 @@ const GoogleSignin = () => {
       console.log(error);
     }
   }
-  
   
 if(window.google) {
   window.google.accounts.id.initialize({

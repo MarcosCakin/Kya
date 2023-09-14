@@ -1,19 +1,34 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const user_login = createAsyncThunk(
     'user_login',
     async (obj) => {
         try {
             const { data } = await axios.post('http://localhost:8000/api/auth/signin', obj.data)
+            console.log(data);
             localStorage.setItem('token', data.response.token)
             localStorage.setItem('user', JSON.stringify(data.response.user))
+            Swal.fire({
+                title: 'Welcome',
+                text: data.message,
+                icon: 'success',
+                confirmButtonText: 'Okay'
+              })
+
             return {
                 user: data.response.user,
                 token: data.response.token
             } 
         } catch (error) {
             console.log(error)
+            Swal.fire({
+                title: 'Error!',
+                text: error.response.data.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
             return {
                 user: null
             }
@@ -54,6 +69,7 @@ export const user_signup = createAsyncThunk(
             }
         } catch (error) {
             console.log(error);
+            
             return{
                 user: null
             }
