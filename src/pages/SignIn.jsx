@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { user_login } from "../store/actions/userActions";
 import GoogleSignin from "../components/GoogleSignin";
 import { useState } from "react";
@@ -6,8 +6,6 @@ import { useState } from "react";
 const SignIn = () => {
 
   const dispatch = useDispatch();
-
-  const store = useSelector(store => store.userReducer)
 
   const [formData, setFormData] = useState({
     email:'',
@@ -59,8 +57,8 @@ const SignIn = () => {
                   Dont have an account? please, <a className="underline" href="/signup">sing up here!</a>
                   <br/>or                
                 </p>
-                <GoogleSignin />
               </div>
+                <GoogleSignin />
             </form>
           </div>
         </div>
