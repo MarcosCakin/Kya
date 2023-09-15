@@ -69,7 +69,12 @@ export const user_signup = createAsyncThunk(
             }
         } catch (error) {
             console.log(error);
-            
+            Swal.fire({
+                title: 'Error!',
+                text: error.response.data.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })            
             return{
                 user: null
             }

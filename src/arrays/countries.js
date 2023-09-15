@@ -1,5 +1,5 @@
 const countries = [
-  {"name": "Choose your option..."},
+  {"name": "Country..."},
   {"name": "Afghanistan", "value": "Afghanistan"},
   {"name": "Albania", "value": "Albania"},
   {"name": "Algeria", "value": "Algeria"},

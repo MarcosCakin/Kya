@@ -1,8 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faImage } from '@fortawesome/free-solid-svg-icons'
 import countries from '../arrays/countries'
-
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { user_signup } from "../store/actions/userActions";
 import { useState } from 'react'
 import Swal from 'sweetalert2';
@@ -28,17 +25,18 @@ const SingUp = () => {
 
   const handleSingup = async (e) => {
     e.preventDefault();
-    const result = await Swal.fire({
-        title: 'Welcome',
-        text: "usuario logueado correctamente",
-        icon: 'success',
-        confirmButtonText: 'Okay'
-    })
+
     try {
       dispatch(user_signup({
         data: formData
       }))
       console.log(formData)
+      const result = await Swal.fire({
+        title: 'Logged!',
+        text: "Please, login",
+        icon: 'success',
+        confirmButtonText: 'Okay'
+    })
     } catch (error) {
       console.log(error)
     }
@@ -69,6 +67,11 @@ const SingUp = () => {
             </div>
 
             <div>
+              <label htmlFor="photo" />
+              <input className="px-3 py-1 w-full rounded-xl bg-dark border-b" onChange={handleInput} type="text" name="photo" id="photo" placeholder="Avatar url..." required />
+            </div>
+
+            <div>
                 <label htmlFor="country" />
                 <select className="px-3 py-1 w-full rounded-xl bg-dark border-b cursor-pointer" onChange={handleInput} type="select" name="country" id="country" required >
                   {
@@ -77,14 +80,6 @@ const SingUp = () => {
                 </select>
             </div>
 
-            <div>
-              <label className="flex items-center justify-center text-light w-full text-center rounded-xl bg-dark border
-               p-1 space-x-2 cursor-pointer hover:text-dark hover:bg-[#9ca3af] hover:border-dark">
-                <FontAwesomeIcon icon={faImage} />
-                <p> Choose avatar</p>
-                <input className="hidden" onChange={handleInput} type="file" name="avatar" />
-              </label>
-            </div>
 
             <button
                onSubmit={handleSingup} 
